@@ -334,7 +334,7 @@ https://templatemo.com/tm-566-medic-care
                                 
                                 <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
                             
-                                <form role="form" action="#booking" method="post">
+                                <form role="form" action="process_booking.php" method="post">
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>

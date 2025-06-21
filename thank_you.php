@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'partials/header.php';
 ?>
 <!DOCTYPE html>
 <html lang="sk">
@@ -12,8 +12,8 @@
     <h2>Thank You for Your Booking!</h2>
     
     <?php
-    $name = htmlspecialchars($_GET['name']);
-    $date = htmlspecialchars($_GET['date']);
+    $name = $_GET['name'];
+    $date = $_GET['date'];
     echo "<p>Thank you, $name! Your appointment has been successfully booked for <strong>$date</strong>.</p>";
     ?>
     
@@ -25,5 +25,5 @@
 </body>
 </html>
 <?php
-  include 'footer.php';
+  include 'partials/footer.php';
 ?>

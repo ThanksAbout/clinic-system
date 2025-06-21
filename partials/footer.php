@@ -52,7 +52,3 @@
                 </div>
             </section>
         </footer>
-        <?php
-         add_script();
-         add_stylesheets();
-         ?>

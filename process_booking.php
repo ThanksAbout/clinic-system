@@ -1,12 +1,21 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $date = htmlspecialchars($_POST['date']);
-    $message = htmlspecialchars($_POST['message']);
+require_once '_inc/classes/Database.php';
+require_once '_inc/classes/Appointment.php';
+require_once '_inc/classes/BookingController.php';
 
-    header("Location: thank_you.php?name=$name&date=$date");
-    exit;
-}
-?>
+$db = new Database();
+$pdo = $db->getConnection();
+
+$appointment = new Appointment($pdo);
+$controller = new BookingController($appointment);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($controller->process($_POST)) {
+        header("Location: thank_you.php?name=" . urlencode($_POST['name']) . "&date=" . urlencode($_POST['date']));
+        exit;
+    } else {
+        echo "Ошибка при сохранении записи.";
+    }
+} else {
+    echo "Неверный запрос";
+}?>

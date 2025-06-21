@@ -1,5 +1,8 @@
 <?php
- require('_inc/function.php');
+ require_once('_inc/autoload.php');
+ $assets = new PageAssets();
+ $assets->addStylesheets();
+ $assets->addScripts();
  ?>
 <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
     <div class="container">

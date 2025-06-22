@@ -8,7 +8,6 @@ $db = new Database();
 $pdo = $db->getConnection();
 $appointment = new Appointment($pdo);
 
-// Обработка отправки формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id      = $_POST['id']     ?? null;
     $name    = $_POST['name']   ?? '';
@@ -25,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Получение данных для формы
 $id = $_GET['id'] ?? null;
 if (!$id) {
     echo "<div class='error'>Missing ID.</div>";

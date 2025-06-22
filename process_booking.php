@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: thank_you.php?name=" . urlencode($_POST['name']) . "&date=" . urlencode($_POST['date']));
         exit;
     } else {
-        echo "Ошибка при сохранении записи.";
+        echo "Error saving the appointment.";
     }
 } else {
-    echo "Неверный запрос";
+    echo "Invalid request. Please submit the form.";
 }?>
